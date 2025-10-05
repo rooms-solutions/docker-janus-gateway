@@ -3,7 +3,7 @@ general: {
 	json = "{{ default .Env.WEBSOCKETS_JSON "indented" }}"
 	pingpong_trigger = {{ default .Env.WEBSOCKETS_PINGPONG_TRIGGER "30" }}
 	pingpong_timeout = {{ default .Env.WEBSOCKETS_PINGPONG_TIMEOUT "10" }}
-	ws = {{ default .Env.WEBSOCKETS_ENABLED "false" }}
+	ws = {{ default .Env.WEBSOCKETS_ENABLED "true" }}
 	ws_port = {{ default .Env.WEBSOCKETS_PORT "8188" }}
 	wss = {{ default .Env.WEBSOCKETS_SSL_ENABLED "false" }}
 	wss_port = {{ default .Env.WEBSOCKETS_SSL_PORT "8989" }}
@@ -27,7 +27,7 @@ general: {
 }
 
 admin: {
-	admin_ws = {{ default .Env.WEBSOCKETS_ADMIN_ENABLED "false" }}
+	admin_ws = {{ default .Env.WEBSOCKETS_ADMIN_ENABLED "true" }}
 	admin_ws_port = {{ default .Env.WEBSOCKETS_ADMIN_PORT "7188" }}
 	admin_wss = {{ default .Env.WEBSOCKETS_ADMIN_SSL_ENABLED "false" }}
 	admin_wss_port = {{ default .Env.WEBSOCKETS_ADMIN_SSL_PORT "7989" }}
