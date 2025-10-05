@@ -109,6 +109,8 @@ RUN cd /build/janus-gateway && \
   make install && \
   make configs
 
+RUN ls -al /usr/local/lib/janus/transports
+
 # Install dependencies of dockerize
 RUN \
   apt-get update && \
