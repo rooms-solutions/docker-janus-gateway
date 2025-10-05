@@ -96,6 +96,7 @@ RUN cd /build/janus-gateway && \
   sh autogen.sh && \
   ./configure --prefix=/usr/local \
     --disable-all-transports \
+    --enable-http \
     --enable-post-processing \
     --enable-websockets \
     --enable-rabbitmq \
