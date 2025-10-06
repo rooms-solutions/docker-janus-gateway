@@ -4,16 +4,16 @@
 # the web server which will receive the requests.
 
 general: {
-	enabled = false		# By default the module is not enabled
-	events = "all"		# Comma separated list of the events mask you're interested
+	enabled = {{ default .Env.SAMPLEEVH_ENABLED "false" }}		# By default the module is not enabled
+	events = "{{ default .Env.SAMPLEEVH_EVENTS "all" }}"		# Comma separated list of the events mask you're interested
 						# in. Valid values are none, sessions, handles, jsep, webrtc,
 						# media, plugins, transports, core, external and all. By
 						# default we subscribe to everything (all)
-	grouping = true		# Whether events should be sent individually (one per
+	grouping = {{ default .Env.SAMPLEEVH_GROUPING "true" }}		# Whether events should be sent individually (one per
 						# HTTP POST, JSON object), or if it's ok to group them
 						# (one or more per HTTP POST, JSON array with objects)
 						# The default is 'true' to limit the number of connections.
-	json = "indented"	# Whether the JSON messages should be indented (default),
+	json = "{{ default .Env.SAMPLEEVH_JSON "indented" }}"	# Whether the JSON messages should be indented (default),
 						# plain (no indentation) or compact (no indentation and no spaces)
 
 	#compress = true	# Optionally, the JSON messages can be compressed using zlib
@@ -24,7 +24,7 @@ general: {
 						# requests with an application/json payload. In case
 						# authentication is required to contact the backend, set
 						# the credentials as well (basic authentication only).
-	backend = "http://your.webserver.here/and/a/path"
+	backend = "{{ default .Env.SAMPLEEVH_BACKEND "http://your.webserver.here/and/a/path" }}"
 	#backend_user = "myuser"
 	#backend_pwd = "mypwd"
 
