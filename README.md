@@ -56,6 +56,7 @@ to the original configuration files in order to provide more consistent usage.
 #### General
 
 - SERVER_NAME - String that identifies this particular Janus instance (default=MyJanusInstance)
+- SESSION_TIMEOUT - How long in seconds before a Janus session is considered timed out when no requests are received (default=60). Set to 0 to disable timeouts (not recommended).
 
 #### Recordings
 
